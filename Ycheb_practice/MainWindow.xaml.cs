@@ -19,6 +19,7 @@ namespace Ycheb_practice
         public MainWindow()
         {
             InitializeComponent();
+            //СУКА
         }
     }
 }
