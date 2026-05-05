@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
@@ -9,13 +9,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.26" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore"        Version="8.0.26" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.26" />
-    <PackageReference Include="System.Linq.Dynamic.Core" Version="1.7.2" />
+    <!-- Нужен для Dynamic LINQ фильтрации в DataService.Get() -->
+    <PackageReference Include="System.Linq.Dynamic.Core"            Version="1.6.3"  />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="DatabaseModel\" />
+    <Folder Include="Service\" />
   </ItemGroup>
 
 </Project>

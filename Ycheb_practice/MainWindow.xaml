@@ -3,9 +3,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Ycheb_practice"
         mc:Ignorable="d"
-        Title="FitnessManager — Клиенты" Height="500" Width="900"
+        Title="FitnessManager — Клиенты" Height="520" Width="920"
         WindowStartupLocation="CenterScreen">
     <Grid Margin="10">
         <Grid.RowDefinitions>
@@ -14,13 +13,27 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <!-- Заголовок -->
-        <TextBlock Grid.Row="0"
-                   Text="Список клиентов (таблица Clients)"
-                   FontSize="16" FontWeight="Bold"
-                   Margin="0,0,0,10"/>
+        <!-- Верхняя панель: заголовок + кнопка пересоздания БД -->
+        <Grid Grid.Row="0" Margin="0,0,0,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
 
-        <!-- DataGrid с данными клиентов -->
+            <TextBlock Grid.Column="0"
+                       Text="Список клиентов — через ManagerService"
+                       FontSize="14" FontWeight="Bold"
+                       VerticalAlignment="Center"/>
+
+            <Button Grid.Column="1"
+                    Content="🔄 Пересоздать БД"
+                    Width="160" Height="32"
+                    Background="#E74C3C" Foreground="White"
+                    BorderThickness="0"
+                    Click="BtnRecreateDatabase_Click"/>
+        </Grid>
+
+        <!-- DataGrid клиентов -->
         <DataGrid x:Name="dgClients"
                   Grid.Row="1"
                   AutoGenerateColumns="False"
